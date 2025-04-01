@@ -27,7 +27,10 @@ final class Main extends PluginBase implements Listener{
 			if(!($packet instanceof ModalFormRequestPacket)){
 				continue;
 			}
-			foreach($event->getTargets() as $target){
+
+            $this->getLogger()->info("FormImagesFix caught a form packet for image fix.");
+
+            foreach($event->getTargets() as $target){
 				$player = $target->getPlayer();
 				if($player === null || !$player->isConnected()){
 					continue;
